@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb+srv://dbUser:dbUserPassword@seper.d53lz.mongodb.net/SEPER?retryWrites=true&w=majority"
+  }
