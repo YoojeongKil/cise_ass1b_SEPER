@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 const SubmissionForm = () => {
   const { register, handleSubmit } = useForm();
   const [result, setResult] = useState("");
-  const onSubmit = (data) => setResult(JSON.stringify(data));
-
+  const onSubmit = (data) => {
+  
+  axios.post("http://localhost:5000/api/books", data)
+     .then(res => {
+        setResult("")
+        this.props.history.push('/');
+      })
+      .catch(err => {
+        console.log("Error in SubissionForm!");
+      })
+    }
+    
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
     
@@ -18,7 +29,7 @@ const SubmissionForm = () => {
       <select {...register("sepractice")}>
         <option value="">Select SE practice...</option>
         <option value="TDD">TDD</option>
-        <option value="Mob Programming">Mob Programmin</option>
+        <option value="Mob Programming">Mob Programming</option>
       </select>
 
       <p>{result}</p>
