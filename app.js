@@ -28,12 +28,11 @@ const port = process.env.PORT || 5000;
 // Accessing the path module
 const path = require("path");
 
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-  
-  app.get("*", function (request, response) {
-    response.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-}
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+});
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
