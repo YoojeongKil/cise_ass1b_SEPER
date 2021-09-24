@@ -15,7 +15,8 @@ const App = () =>  {
     return (
         <Router>
         <div>
-          <h1>Software Engineering Practice Evidence Repository (SEPER)</h1>
+          <h1>SEPER</h1>
+          <h5>Software Engineering Practice Evidence Repository </h5>
             <ul className="header">
                 <li><NavLink exact to = "/">Home</NavLink></li>
                 <li><NavLink to = "/SEPractice">Select the Practice</NavLink></li>

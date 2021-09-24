@@ -2,10 +2,20 @@ import React, { Component } from "react";
 class Home extends Component {
   render() {
     return (
-      <div>
-        <h2> How to use SEPER</h2>
-        <p>I am not sure what to put on the home page</p>
-        <p>A nice logo? Instructions?</p>
+      <div class="welcomesign"> 
+        <h2> Welcome to SEPER</h2>
+        <div class="maincontent">
+          <p>Begin your search now. The Software Practice Empirical Evidence 
+            Database allows you to search for recommended articles about a specific 
+            Software Engineering practice. </p>
+          <div class="searchbar">
+            <h4>Begin your first search:</h4>
+            <br></br>
+            <input type="text" placeholder="Enter search"></input>
+            <br></br>
+              <button>Search</button>
+          </div>
+        </div>
       </div>
     );
   }
