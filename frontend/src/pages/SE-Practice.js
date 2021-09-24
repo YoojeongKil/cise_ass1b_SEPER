@@ -4,18 +4,18 @@ import Table from "../components/evidencetable.js";
 import tablecolumns from "../components/tablecolumns.js";
 import Dropdown from "../components/Dropdown.js";
 import axios from 'axios';
+import { useState } from "react";
 
-const SEPractice = () => {
-  const articles= 
-    axios.get('http://localhost:5000/api/books')
+const SEPractice = () => { 
+  const [articles, setArticles] = useState([]);
+  
+  axios.get("http://localhost:5000/api/books")
     .then(res => {
-      this.setState({
-        articles: res.data
-      })
+      setArticles(res.data);
     })
     .catch(err =>{
-      console.log('Error from ShowBookList');
-    });
+      console.log('Error in SE-Practice');
+    })
 
   return (
     <div>

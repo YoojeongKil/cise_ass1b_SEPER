@@ -24,10 +24,10 @@ const BookSchema = new mongoose.Schema({
     type: String
   },
   claim: {
-    type:String
+    type: String
   },
   evidence: {
-    type:String
+    type: String
   }
 });
  
