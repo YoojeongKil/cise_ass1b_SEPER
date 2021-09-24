@@ -27,6 +27,7 @@ const {
       columns,
       data,
       initialState: { pageIndex: 0 },
+      autoResetSortBy: false,
     },
     
     useSortBy,

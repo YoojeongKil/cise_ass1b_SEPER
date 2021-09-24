@@ -1,7 +1,7 @@
 // models/Book.js
-
+ 
 const mongoose = require('mongoose');
-
+ 
 const BookSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -22,7 +22,13 @@ const BookSchema = new mongoose.Schema({
   },
   sepractice: {
     type: String
+  },
+  claim: {
+    type: String
+  },
+  evidence: {
+    type: String
   }
 });
-
+ 
 module.exports = Book = mongoose.model('book', BookSchema);
