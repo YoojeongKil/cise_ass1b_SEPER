@@ -6,8 +6,8 @@ const articles = [
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "code quality improvement", 
-      evidence: "strong support",
+     // claim: "code quality improvement", 
+      //evidence: "strong support",
     },
   {
     _id: "2",
@@ -16,8 +16,8 @@ const articles = [
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "product quality improvement", 
-      evidence: "weak support",
+     // claim: "product quality improvement", 
+      //evidence: "weak support",
   },
     {
       _id: "3",
@@ -26,8 +26,8 @@ const articles = [
       source: " Empirical Software Engineering, 13(3), 289–302",
       pubyear: "2008",
       doi: "https://doi.org/10.1007/s10664-008-9062-z",
-      claim: "product quality improvement", 
-      evidence: "weak support",
+     // claim: "product quality improvement", 
+     // evidence: "weak support",
     },
     {
       _id: "4",
@@ -36,8 +36,8 @@ const articles = [
       source: "Software, IEEE, 25(2) 77-84",
       pubyear: "2008",
       doi: "",
-      claim: "code quality improvement", 
-      evidence: "strong support",
+     // claim: "code quality improvement", 
+     // evidence: "strong support",
     },
     {
       _id: "5",
@@ -46,8 +46,8 @@ const articles = [
       source: "ArXiv.Org, cs.SE, arXiv:1711.05082-284",
       pubyear: "2017",
       doi: "https://doi.org/10.1109/esem.2007.35",
-      claim: "code quality improvement", 
-      evidence: "weak against",
+     // claim: "code quality improvement", 
+     // evidence: "weak against",
     },
   ];
     module.exports = articles;

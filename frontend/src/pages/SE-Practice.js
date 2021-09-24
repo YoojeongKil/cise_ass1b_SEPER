@@ -1,10 +1,22 @@
-import articles from "../dummydata/articles.js";
+//import articles from "../dummydata/articles.js";
 import Styles from "../components/tablestyle.js";
 import Table from "../components/evidencetable.js";
 import tablecolumns from "../components/tablecolumns.js";
 import Dropdown from "../components/Dropdown.js";
+import axios from 'axios';
+import { useState } from "react";
 
-const SEPractice = () => {
+const SEPractice = () => { 
+  const [articles, setArticles] = useState([]);
+  
+  axios.get("http://localhost:5000/api/books")
+    .then(res => {
+      setArticles(res.data);
+    })
+    .catch(err =>{
+      console.log('Error in SE-Practice');
+    })
+
   return (
     <div>
       <h2>Select SE Practice to get evidence for the claimed benefits</h2>
