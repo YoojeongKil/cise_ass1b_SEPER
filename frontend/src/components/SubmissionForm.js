@@ -7,7 +7,7 @@ const SubmissionForm = () => {
   const [result, setResult] = useState("");
   const onSubmit = (data) => {
   
-  axios.post("http://localhost:5000/api/books", data)
+  axios.post("https://thawing-thicket-05050.herokuapp.com/api/books", data)
      .then(res => {
         setResult("")
         this.props.history.push('/');
@@ -29,7 +29,7 @@ const SubmissionForm = () => {
       <select {...register("sepractice")}>
         <option value="">Select SE practice...</option>
         <option value="TDD">TDD</option>
-        <option value="Mob Programming">Mob Programming</option>
+        <option value="Mob-Programming">Mob Programming</option>
       </select>
 
       <p>{result}</p>
