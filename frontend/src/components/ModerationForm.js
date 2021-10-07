@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 const ModerationForm = (props) => {
-  const { handleSubmit, register } = useForm();
+    const { handleSubmit, register } = useForm();
     const [result, setResult] = useState([]);
     const [article, setArticle] = useState([]);
 
