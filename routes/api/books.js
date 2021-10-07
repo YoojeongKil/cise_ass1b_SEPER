@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
     .then(book => res.json({ msg: 'Book added successfully' }))
     .catch(err => res.status(400).json({ error: 'Unable to add this book' }));
 });
- 
+
 // @route GET api/books/:id
 // @description Update book
 // @access Public

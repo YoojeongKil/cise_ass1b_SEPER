@@ -6,7 +6,6 @@ const ModerationForm = (props) => {
   const { handleSubmit, register } = useForm();
     const [result, setResult] = useState([]);
     const [article, setArticle] = useState([]);
-    const [status, setStatus] = useState([]);
 
     axios.get("https://thawing-thicket-05050.herokuapp.com/api/books/")
         .then((res) =>{
@@ -37,14 +36,13 @@ const ModerationForm = (props) => {
       }
 
       const onSubmit = (data) => {
-        setStatus(JSON.stringify(data));  
         props.onSubmit(data);;
     };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
         <select {...register("id")} value={selectValue} onChange={handleSelect}>
-            <option value="article">Select Submission</option>
+            <option value="article">Select Article</option>
             {optionItems}
         </select>
         <p>{article}</p>
@@ -56,7 +54,7 @@ const ModerationForm = (props) => {
             <option value="accept">Accept</option>
             <option value="decline">Decline</option>
         </select>
-        <p>{status}</p>
+        <p/>
         <input type="submit" />
     </form>
     ); 
