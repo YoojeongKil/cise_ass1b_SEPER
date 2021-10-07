@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
     .then(book => res.json(book))
     .catch(err => res.status(404).json({ nobookfound: 'No Book found' }));
 });
- 
+
 // @route GET api/option/:practice
 // @description Get single book by practice
 // @access Public
