@@ -7,7 +7,7 @@ const SubmissionForm = () => {
   const [result, setResult] = useState("");
   const onSubmit = (data) => {
   
-  axios.post("https://thawing-thicket-05050.herokuapp.com/api/books", data)
+  axios.post("https://thawing-thicket-05050.herokuapp.com/api/books/", data)
      .then(res => {
         setResult("")
         this.props.history.push('/');
