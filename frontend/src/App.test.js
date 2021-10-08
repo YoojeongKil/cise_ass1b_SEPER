@@ -2,6 +2,10 @@ import React from 'react';
     import ReactDOM from 'react-dom';
     import App from './App';
     import articles from "./dummydata/articles.js";
+    import {render, screen, fireEvent} from "@testing-library/react";
+    import Moderate from './pages/Moderate-Article'
+    import Dropdown from "./components/Dropdown.js";
+    import AnalystForm from './components/AnalystForm';
 
     it('renders without crashing', () => {
       const div = document.createElement('div');
@@ -44,3 +48,50 @@ import React from 'react';
         expect(articles[4].doi).toEqual("https://doi.org/10.1109/esem.2007.35");
       });
     });
+
+    describe('Moderation form', () => {
+      it("renders the correct content", () => {
+        const {getByText} = render(<Moderate />);
+
+        getByText("Moderate Article");
+        getByText("This will be a form to allow moderators to accept or reject a submission.")
+      });
+    });
+
+    describe('Dropdown TDD', () => {
+      it("select TDD in dropdown", () => {
+        render(<Dropdown />);
+        expect(screen.getByText("Select an SE Practice")).toBeInTheDocument();
+        const input = screen.getByText("TDD");
+        fireEvent.click(input);
+        expect(input.textContent).toEqual("TDD");
+      });
+    });
+
+    describe('Dropdown Mob-Programming', () => {
+      it("select Mob-Programming in dropdown", () => {
+        render(<Dropdown />);
+        expect(screen.getByText("Select an SE Practice")).toBeInTheDocument();
+        const input = screen.getByText("Mob-Programming");
+        fireEvent.click(input);
+        expect(input.textContent).toEqual("Mob-Programming");
+      });
+    });
+
+    describe('Analyst extract', () => {
+      it("select claim", () => {
+        render(<AnalystForm />);
+        expect(screen.getByText("Select Claim")).toBeInTheDocument();
+        const input = screen.getByText("Code Quality Improvement");
+        fireEvent.click(input);
+        expect(input.textContent).toEqual("Code Quality Improvement");
+      });
+    });
+
+
+
+    
+
+    
+
+    
